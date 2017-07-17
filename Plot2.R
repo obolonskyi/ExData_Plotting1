@@ -13,11 +13,8 @@ newepc <- subset(epc, Date=="1/2/2007"| Date=="2/2/2007")
 Datetime <- paste(newepc$Date, newepc$Time)
 Datetime1 <- as.POSIXct(Datetime, format="%d/%m/%Y %H:%M:%S", tz="")
 
-##newepc$Date<-as.Date(newepc$Date, format="%d/%m/%Y")
-##newepc$Time<-as.POSIXct(newepc$Time, format = "%H:%M:%S", tz="")
 
-
-## create plot1 - Global Active Power - Frequency
-plot(Datetime1, newepc$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
+## create plot2
 png(filename = "plot2.png",width = 480, height = 480)
+plot(Datetime1, newepc$Global_active_power, type="l", col="black", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
